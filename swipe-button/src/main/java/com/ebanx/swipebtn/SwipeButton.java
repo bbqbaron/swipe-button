@@ -289,6 +289,9 @@ public class SwipeButton extends RelativeLayout {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    case MotionEvent.ACTION_CANCEL:
+                        moveButtonBack();
+                        return true;                        
                     case MotionEvent.ACTION_DOWN:
                         return !TouchUtils.isTouchOutsideInitialPosition(event, swipeButtonInner);
                     case MotionEvent.ACTION_MOVE:
