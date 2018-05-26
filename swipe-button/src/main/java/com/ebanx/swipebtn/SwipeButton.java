@@ -288,6 +288,7 @@ public class SwipeButton extends RelativeLayout {
         return new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                requestDisallowInterceptTouchEvent(true);
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_CANCEL:
                         moveButtonBack();
